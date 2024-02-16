@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" >Resultados</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="menu-header-bg"></div>
+  <app-headers></app-headers>
+  <div *ngIf="this.campos">
+  <ion-card class="data01" *ngFor="let caraac2 of this.campos"  id="{{caraac2.id}}">
+      <ion-item class="ion-activated">
+         <div class="list card">
+          <div class="item item-avatar">
+            <h2> Activo en Operacion <span>{{caraac2.activos}}</span></h2>
+          </div>
+          <div class="item item-body">
+            <p><span>Marco de Tiempo</span>  :
+               {{caraac2.tiempo}}</p>
+            <p><span>Inicio Operacion</span>  :
+              <span class="tiempores">{{caraac2.tiempoini}}</span></p>
+            <p><span>Final Operacion</span>  :
+              <span class="tiempores">{{caraac2.tiempofin}}</span></p>
+            <p><span>Valor Inicial</span>  :
+                {{caraac2.valorIni}}</p>
+          <div class="contprioritario">
+              <p>prioridad :<br><strong>{{caraac2.prioridas}}</strong> </p>
+              <p>Accion :<br><strong>{{caraac2.accion}} </strong></p>
+          </div>
+            <p class="contensub" >
+              <ion-button (click)="cerrarOperacion(caraac2.id,caraac2.grabar)"  color="{{caraac2.class}}" disabled="{{caraac2.estado}}" class="{{caraac2.class}}"  style="width: 100%;" expand="full" type="submit" name="envio" >{{caraac2.mensaje}}</ion-button>
+            </p>
+          </div>
+        </div>
+      </ion-item>
+  </ion-card>
+  </div>
+  <div *ngIf="validar[4] === 'inactivo'">
+    <app-nousuario></app-nousuario>
+  </div>
+  <app-menu-bajo></app-menu-bajo>
+</ion-content>

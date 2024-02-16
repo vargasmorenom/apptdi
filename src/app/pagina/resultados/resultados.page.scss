@@ -1,0 +1,54 @@
+ion-header{
+  --ion-background-color:#6080d6;
+
+  }
+  ion-title{
+      color: rgb(245, 239, 239) !important;
+      font-weight: bolder;
+  }
+
+  ion-card{
+      border: solid #6080d6 7px;
+      padding: 0.5em;}
+
+  list-card{width: 100%;}
+
+  .data01 h2{
+    color: black;
+    font-size: 1.1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .data01 h2 span{
+    font-size: 1.6em;
+    color:#6080d6;
+
+  }
+
+  .data01 h2 span{
+    font-size: 1.6em;
+    color:#6080d6;
+
+  } .data01 p{
+    font-size: 1.1em;
+    color:#161616;
+
+  }
+
+  .success{
+      color: green;
+      font-size: 1em;
+      font-weight: bolder;
+  }
+  .danger{
+      color: red;
+      font-size: 1em;
+      font-weight: bolder;
+  }
+  .tiempores{
+      font-size: .8em;
+  }
+  .alert-title.sc-ion-alert-md{
+      text-align: center !important;
+
+  }

@@ -1,0 +1,7 @@
+{
+  "name": "AppTDI.2.20",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

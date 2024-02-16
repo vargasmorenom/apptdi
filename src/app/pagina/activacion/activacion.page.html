@@ -1,0 +1,74 @@
+ <ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" >{{pagina}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="menu-header-bg"></div>
+  <app-headers></app-headers><ion-content>
+
+    <div class="formulariosactiv" *ngIf="data[4] === 'inactivo'">
+      <h2>Creacion de Cuenta</h2>
+       <form  #formulario="ngForm" (ngSubmit)="activar(); formulario.reset()">
+       <div>
+       <ion-list>
+       <ion-item>
+       <ion-label position="floating">Nombres :</ion-label>
+       <ion-input type="text" name="nombres" pattern="[a-zA-Z-\s]{3,50}" [(ngModel)]="activa.nombres" required></ion-input>
+       </ion-item>
+       <ion-item>
+       <ion-label position="floating">Apellidos :</ion-label>
+       <ion-input type="text" name="apellidos" pattern="[a-zA-Z-\s]{3,50}" [(ngModel)]="activa.apellidos" required></ion-input>
+       </ion-item>
+       <ion-item>
+       <ion-label position="floating">Correo :</ion-label>
+       <ion-input type="email" name="correo" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" [(ngModel)]="activa.correo" required></ion-input>
+       </ion-item>
+       <ion-radio-group type="boolean" name="termino" [(ngModel)]="activa.termino">
+       <ion-item>
+       <ion-label><a (click)="ira()">terminos y condiciones</a></ion-label>
+       <ion-radio slot="start" value="1"></ion-radio>
+       </ion-item>
+       </ion-radio-group>
+       </ion-list>
+       <ion-item>
+       <ion-button style="width: 100%;" expand="full" type="submit" name="envio" [disabled]="formulario.invalid">Crear Cuenta</ion-button>
+       </ion-item>
+       </div>
+       </form>
+     </div>
+
+     <div class="validacion" *ngIf="data[4] === 'pendiente'">
+       <h2>Creacion de Cuenta</h2>
+        <form  #formulario="ngForm" (ngSubmit)="validar(); formulario.reset()">
+        <div>
+        <ion-list>
+        <ion-item>
+        <ion-label position="floating">Codigo Activacion</ion-label>
+        <ion-input type="text" name="codigo" [(ngModel)]="valida.codigo" required></ion-input>
+        </ion-item>
+        </ion-list>
+        <ion-item>
+        <ion-button style="width: 100%;" expand="full" type="submit" name="envio" [disabled]="formulario.invalid">Activar</ion-button>
+        </ion-item>
+        </div>
+        </form>
+      </div>
+
+
+       <div class="formulariosactiv" *ngIf="data[4] ==='Activa'">
+       <ion-card>
+         <ion-card-header>
+           <ion-card-subtitle>Estado de Cuenta</ion-card-subtitle>
+           <ion-card-title>Activa</ion-card-title>
+
+         </ion-card-header>
+
+         <ion-card-content>
+         </ion-card-content>
+       </ion-card>
+      </div>
+      <app-menu-bajo></app-menu-bajo>
+ </ion-content>
+
+

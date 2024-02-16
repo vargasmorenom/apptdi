@@ -1,0 +1,23 @@
+h1{
+  text-align: center;
+  font-size: 1.5em;;
+}
+p{
+  text-align: justify;
+  font-size: 0.9em;
+  width: 86%;
+  margin: 1px auto;
+  line-height: 19px;
+}
+
+ion-content h2, p{
+  color: rgb(54, 63, 88) !important;
+}
+ion-header{
+  --ion-background-color:#6080d6;
+
+  }
+  ion-title{
+      color: rgb(245, 239, 239) !important;
+      font-weight: bolder;
+  }

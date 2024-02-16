@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Reportes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #formulario01="ngForm" (ngSubmit)="consultar();" *ngIf="usuario[4] === 'Activa'">
+    <ion-item class="tiempo">
+      <ion-label>Tiempo Inicio</ion-label>
+      <ion-datetime name="tiempo1" min="{{fechas}}" [(ngModel)]="elemen.tiempo1" displayFormat="YYYY-MM-DD" value="{{fechas}}"></ion-datetime>
+    </ion-item>
+    <ion-item class="tiempo">
+      <ion-label>Tiempo Final</ion-label>
+      <ion-datetime name="tiempo2" min="{{fechas}}" [(ngModel)]="elemen.tiempo2" displayFormat="MMMM" value="2022-12-15"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-button style="width: 100%;" expand="full" type="submit" name="envio">Descargar Reporte</ion-button>
+    </ion-item>
+  </form>
+  <div *ngIf="usuario[4] === 'inactivo'">
+    <app-nousuario></app-nousuario>
+  </div>
+</ion-content>
+<app-menu-bajo></app-menu-bajo>
