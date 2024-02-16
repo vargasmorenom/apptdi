@@ -13,6 +13,7 @@ export class HomePage {
   public data: any;
   public localstore: any;
   public salida: any;
+  public salidaDatos: any;
 
 
 
