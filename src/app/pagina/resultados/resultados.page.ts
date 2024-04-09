@@ -22,7 +22,11 @@ export class ResultadosPage implements OnInit {
 
     this.validar = this.app.cosultaUser();
     this.campos = this.cargaroperaciones();
-
+    let tiempos = this.app.consultaStore('listadoOperaciones');
+    let campoa = new Date(tiempos[0]['camposOper'][1]['tiempofin']);
+    let campob = new Date(this.app.horaGlobal());
+   console.log(campoa > campob);
+   console.log(this.app.horaGlobal() < tiempos[0]['camposOper'][0]['tiempofin']);
    }
 
   ngOnInit() {
@@ -57,14 +61,15 @@ guardar(val:any,id:any){
 }
 
 
-validaractivo(tm2: any,tm1: any, acti: any){
+validaractivo(tm2: any, tm1: any, acti: any){
 
 let activo = [{'mensaje':'Operacion Activa','class':'success','estado':'disabled'}];
 let final = [{'mensaje':'Operacion Finalizada','class':'danger','estado':'false'}];
 let noOperacion = [{'mensaje':'No operacion ','class':'light','estado':'false'}];
-
+let campoa = new Date(tm2);
+let campob = new Date(tm1);
 if(acti === 1){
-   return this.app.horaNumeros(tm1) < this.app.horaNumeros(tm2) ? JSON.stringify(activo) : JSON.stringify(final);
+   return campob < campoa ? JSON.stringify(activo) : JSON.stringify(final);
 }else{
    return JSON.stringify(noOperacion);
 }
